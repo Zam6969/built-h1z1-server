@@ -1,0 +1,317 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UseOptions = void 0;
+const enums_1 = require("../models/enums");
+exports.UseOptions = {
+    //----------Eat-------------//
+    1: {
+        itemDef: enums_1.Items.BLACKBERRY,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 600,
+        eatCount: 200,
+        drinkCount: 200,
+        givetrash: 0,
+    },
+    2: {
+        itemDef: enums_1.Items.CANNED_FOOD01,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 4000,
+        givetrash: 48,
+    },
+    3: {
+        itemDef: enums_1.Items.MRE_APPLE,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 6000,
+        drinkCount: 6000,
+    },
+    4: {
+        itemDef: enums_1.Items.MEAT_ROTTEN,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 1000,
+    },
+    19: {
+        itemDef: enums_1.Items.MEAT_BEAR,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 2000,
+    },
+    20: {
+        itemDef: enums_1.Items.MEAT_RABBIT,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 2000,
+    },
+    21: {
+        itemDef: enums_1.Items.MEAT_VENISON,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 2000,
+    },
+    22: {
+        itemDef: enums_1.Items.MEAT_WOLF,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 2000,
+    },
+    23: {
+        itemDef: enums_1.Items.STEAK_BEAR,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 4000,
+    },
+    24: {
+        itemDef: enums_1.Items.STEAK_DEER,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 4000,
+    },
+    25: {
+        itemDef: enums_1.Items.STEAK_BEAR,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 4000,
+    },
+    26: {
+        itemDef: enums_1.Items.STEAK_RABBIT,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 4000,
+    },
+    27: {
+        itemDef: enums_1.Items.STEAK_WOLF,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 4000,
+    },
+    28: {
+        itemDef: enums_1.Items.SURVIVAL_BREAD,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 6000,
+    },
+    29: {
+        itemDef: enums_1.Items.SANDWICH_BEAR,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 10000,
+    },
+    30: {
+        itemDef: enums_1.Items.SANDWICH_DEER,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 10000,
+    },
+    31: {
+        itemDef: enums_1.Items.SANDWICH_RABBIT,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 10000,
+    },
+    32: {
+        itemDef: enums_1.Items.SANDWICH_WOLF,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 10000,
+    },
+    36: {
+        itemDef: enums_1.Items.BLACKBERRY_HANDFUL,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 2000,
+        drinkCount: 2000,
+    },
+    37: {
+        itemDef: enums_1.Items.BLACKBERRY_PIE,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 2000,
+        eatCount: 10000,
+        drinkCount: 4000,
+    },
+    39: {
+        itemDef: enums_1.Items.CORN_ROASTED,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 4000,
+    },
+    40: {
+        itemDef: enums_1.Items.HONEY,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 4000,
+        drinkCount: 4000,
+        staminaCount: 200,
+    },
+    46: {
+        itemDef: enums_1.Items.SURVIVAL_BORSCHT,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 2000,
+        drinkCount: 6000,
+    },
+    48: {
+        itemDef: enums_1.Items.BLACKBERRY_PIE_SLICE,
+        type: enums_1.ItemUseOptions.EAT,
+        timeout: 1000,
+        eatCount: 2500,
+        drinkCount: 1000,
+    },
+    //----------Use Medical-------------//
+    5: {
+        itemDef: enums_1.Items.FIRST_AID,
+        type: enums_1.ItemUseOptions.USE_MEDICAL,
+        timeout: 5000,
+        healCount: 99,
+        bandagingCount: 120,
+    },
+    6: {
+        itemDef: enums_1.Items.BANDAGE,
+        type: enums_1.ItemUseOptions.USE_MEDICAL,
+        timeout: 1000,
+        healCount: 9,
+        bandagingCount: 40,
+    },
+    7: {
+        itemDef: enums_1.Items.GAUZE,
+        type: enums_1.ItemUseOptions.USE_MEDICAL,
+        timeout: 1000,
+        healCount: 9,
+        bandagingCount: 40,
+    },
+    8: {
+        itemDef: enums_1.Items.BANDAGE_DRESSED,
+        type: enums_1.ItemUseOptions.USE_MEDICAL,
+        timeout: 2000,
+        healCount: 29,
+        bandagingCount: 0,
+    },
+    42: {
+        itemDef: enums_1.Items.COLD_MEDICINE,
+        type: enums_1.ItemUseOptions.USE_MEDICAL,
+        timeout: 300,
+    },
+    43: {
+        itemDef: enums_1.Items.ANTIBIOTICS,
+        type: enums_1.ItemUseOptions.USE_MEDICAL,
+        timeout: 300,
+    },
+    44: {
+        itemDef: enums_1.Items.VITAMINS,
+        type: enums_1.ItemUseOptions.USE_MEDICAL,
+        timeout: 300,
+    },
+    45: {
+        itemDef: enums_1.Items.IMMUNITY_BOOSTERS,
+        type: enums_1.ItemUseOptions.USE_MEDICAL,
+        timeout: 300,
+    },
+    //----------Ignite-------------//
+    9: {
+        itemDef: enums_1.Items.LIGHTER,
+        type: enums_1.ItemUseOptions.IGNITE,
+        timeout: 100,
+    },
+    10: {
+        itemDef: enums_1.Items.BOW_DRILL,
+        type: enums_1.ItemUseOptions.IGNITE,
+        timeout: 15000,
+    },
+    //----------Drink-------------//
+    11: {
+        itemDef: enums_1.Items.WATER_DIRTY,
+        type: enums_1.ItemUseOptions.DRINK,
+        timeout: 1000,
+        drinkCount: 1000,
+        givetrash: enums_1.Items.WATER_EMPTY,
+    },
+    12: {
+        itemDef: enums_1.Items.WATER_STAGNANT,
+        type: enums_1.ItemUseOptions.DRINK,
+        timeout: 1000,
+        drinkCount: 2000,
+        givetrash: enums_1.Items.WATER_EMPTY,
+    },
+    13: {
+        itemDef: enums_1.Items.WATER_PURE,
+        type: enums_1.ItemUseOptions.DRINK,
+        timeout: 1000,
+        drinkCount: 4000,
+        givetrash: enums_1.Items.WATER_EMPTY,
+    },
+    33: {
+        itemDef: enums_1.Items.BLACKBERRY_JUICE,
+        type: enums_1.ItemUseOptions.DRINK,
+        timeout: 1000,
+        eatCount: 2000,
+        drinkCount: 6000,
+        givetrash: enums_1.Items.WATER_EMPTY,
+    },
+    34: {
+        itemDef: enums_1.Items.COFFEE,
+        type: enums_1.ItemUseOptions.DRINK,
+        timeout: 1000,
+        drinkCount: 4000,
+        staminaCount: 300,
+        givetrash: enums_1.Items.WATER_EMPTY,
+    },
+    35: {
+        itemDef: enums_1.Items.COFFEE_SUGAR,
+        type: enums_1.ItemUseOptions.DRINK,
+        timeout: 1000,
+        drinkCount: 4000,
+        staminaCount: 400,
+        givetrash: enums_1.Items.WATER_EMPTY,
+    },
+    38: {
+        itemDef: enums_1.Items.STEW_RABBIT,
+        type: enums_1.ItemUseOptions.DRINK,
+        timeout: 1000,
+        eatCount: 5000,
+        drinkCount: 5000,
+        givetrash: enums_1.Items.WATER_EMPTY,
+    },
+    41: {
+        itemDef: enums_1.Items.MOONSHINE,
+        type: enums_1.ItemUseOptions.DRINK,
+        timeout: 1000,
+        drinkCount: 3000,
+    },
+    //----------Refuel-------------//
+    14: {
+        itemDef: enums_1.Items.FUEL_BIOFUEL,
+        type: enums_1.ItemUseOptions.REFUEL,
+        timeout: 3000,
+        refuelCount: 2500,
+    },
+    15: {
+        itemDef: enums_1.Items.FUEL_ETHANOL,
+        type: enums_1.ItemUseOptions.REFUEL,
+        timeout: 3000,
+        refuelCount: 5000,
+    },
+    //-----------------Slice------------------//
+    47: {
+        itemDef: enums_1.Items.BLACKBERRY_PIE,
+        type: enums_1.ItemUseOptions.SLICE,
+        timeout: 3000,
+    },
+    //----------Generic USE option------------//
+    16: {
+        itemDef: enums_1.Items.FERTILIZER,
+        type: enums_1.ItemUseOptions.USE,
+        timeout: 1000,
+    },
+    17: {
+        itemDef: enums_1.Items.WATER_EMPTY,
+        type: enums_1.ItemUseOptions.USE,
+        timeout: 1000,
+    },
+    18: {
+        itemDef: enums_1.Items.SWIZZLE,
+        type: enums_1.ItemUseOptions.USE,
+        timeout: 1000,
+    },
+};
+//# sourceMappingURL=useoptions.js.map

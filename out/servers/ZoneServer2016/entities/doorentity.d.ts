@@ -1,0 +1,44 @@
+import { ZoneServer2016 } from "../zoneserver";
+import { BaseLightweightCharacter } from "./baselightweightcharacter";
+import { ZoneClient2016 } from "../classes/zoneclient";
+export declare class DoorEntity extends BaseLightweightCharacter {
+    flags: {
+        bit0: number;
+        bit1: number;
+        bit2: number;
+        bit3: number;
+        bit4: number;
+        bit5: number;
+        bit6: number;
+        bit7: number;
+        bit8: number;
+        bit9: number;
+        bit10: number;
+        bit11: number;
+        projectileCollision: number;
+        bit13: number;
+        bit14: number;
+        bit15: number;
+        bit16: number;
+        bit17: number;
+        bit18: number;
+        bit19: number;
+        noCollide: number;
+        knockedOut: number;
+        bit22: number;
+        bit23: number;
+    };
+    spawnerId: number;
+    npcRenderDistance: number;
+    openAngle: number;
+    closedAngle: number;
+    startRot: Float32Array;
+    positionUpdateType: number;
+    moving: boolean;
+    isOpen: boolean;
+    openSound: number;
+    closeSound: number;
+    constructor(characterId: string, transientId: number, actorModelId: number, position: Float32Array, rotation: Float32Array, server: ZoneServer2016, scale: Float32Array, spawnerId: number);
+    OnPlayerSelect(server: ZoneServer2016, client: ZoneClient2016, isInstant?: boolean): void;
+    OnInteractionString(server: ZoneServer2016, client: ZoneClient2016): void;
+}

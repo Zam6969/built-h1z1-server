@@ -1,0 +1,71 @@
+/// <reference types="node" />
+/// <reference types="node" />
+import { EventEmitter } from "events";
+import { SOEServer } from "../SoeServer/soeserver";
+import { LoginProtocol } from "../../protocols/loginprotocol";
+import Client from "servers/LoginServer/loginclient";
+import { loginPacketsType } from "types/packets";
+import { LoginProtocol2016 } from "../../protocols/loginprotocol2016";
+import { crc_length_options } from "../../types/soeserver";
+import { CharacterLoginReply, CharacterDeleteRequest, CharacterLoginRequest, CharacterCreateRequest, LoginUdp_11packets } from "types/LoginUdp_11packets";
+import { LoginUdp_9packets } from "types/LoginUdp_9packets";
+export declare class LoginServer extends EventEmitter {
+    _soeServer: SOEServer;
+    _protocol: LoginProtocol;
+    _protocol2016: LoginProtocol2016;
+    _db: any;
+    _crcSeed: number;
+    _crcLength: crc_length_options;
+    _udpLength: number;
+    private readonly _cryptoKey;
+    private readonly _mongoAddress;
+    private readonly _soloMode;
+    private readonly _appDataFolder;
+    private _httpServer;
+    _enableHttpServer: boolean;
+    _httpServerPort: number;
+    private _h1emuLoginServer;
+    private _zoneConnections;
+    private _internalReqCount;
+    private _pendingInternalReq;
+    private _pendingInternalReqTimeouts;
+    private _soloPlayIp;
+    private clients;
+    private _resolver;
+    constructor(serverPort: number, mongoAddress?: string);
+    parseData(clientProtocol: string, data: Buffer): import("../../types/protocols").LoginProtocolReadingFormat | null;
+    sendData(client: Client, packetName: loginPacketsType, obj: LoginUdp_9packets | LoginUdp_11packets): void;
+    loadCharacterData(client: Client): Promise<any>;
+    LoginRequest(client: Client, sessionIdString: string): Promise<void>;
+    TunnelAppPacketClientToServer(client: Client, packet: any): Promise<void>;
+    Logout(client: Client): void;
+    addDummyDataToCharacters(characters: any[]): any[];
+    CharacterSelectInfoRequest(client: Client): Promise<void>;
+    updateServerStatus(serverId: number, status: boolean): Promise<void>;
+    updateServersStatus(): Promise<void>;
+    ServerListRequest(client: Client): Promise<void>;
+    CharacterDeleteRequest(client: Client, packet: CharacterDeleteRequest): Promise<void>;
+    getCharactersLoginInfo(serverId: number, characterId: string, loginSessionId: string | undefined): Promise<CharacterLoginReply>;
+    getCharactersLoginInfoSolo(client: Client, characterId: string): Promise<{
+        unknownQword1: string;
+        unknownDword1: number;
+        unknownDword2: number;
+        status: number;
+        applicationData: {
+            serverAddress: string;
+            serverTicket: string | undefined;
+            encryptionKey: Uint8Array;
+            guid: string;
+            unknownQword2: string;
+            stationName: string;
+            characterName: any;
+            unknownString: string;
+        };
+    }>;
+    CharacterLoginRequest(client: Client, packet: CharacterLoginRequest): Promise<void>;
+    askZone(serverId: number, packetName: string, packetObj: any): Promise<unknown>;
+    CharacterCreateRequest(client: Client, packet: CharacterCreateRequest): Promise<void>;
+    start(): Promise<void>;
+    deleteAllLocalCharacters(): void;
+    stop(): void;
+}

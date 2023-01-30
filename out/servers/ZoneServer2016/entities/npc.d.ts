@@ -1,0 +1,43 @@
+import { DamageInfo } from "types/zoneserver";
+import { ZoneServer2016 } from "../zoneserver";
+import { BaseFullCharacter } from "./basefullcharacter";
+import { ZoneClient2016 } from "../classes/zoneclient";
+export declare class Npc extends BaseFullCharacter {
+    health: number;
+    npcRenderDistance: number;
+    spawnerId: number;
+    deathTime: number;
+    flags: {
+        bit0: number;
+        bit1: number;
+        bit2: number;
+        bit3: number;
+        bit4: number;
+        bit5: number;
+        bit6: number;
+        bit7: number;
+        bit8: number;
+        bit9: number;
+        bit10: number;
+        bit11: number;
+        projectileCollision: number;
+        bit13: number;
+        bit14: number;
+        bit15: number;
+        bit16: number;
+        bit17: number;
+        bit18: number;
+        bit19: number;
+        noCollide: number;
+        knockedOut: number;
+        bit22: number;
+        bit23: number;
+    };
+    static isAlive: boolean;
+    set isAlive(state: number);
+    get isAlive(): 0 | 1;
+    constructor(characterId: string, transientId: number, actorModelId: number, position: Float32Array, rotation: Float32Array, server: ZoneServer2016, spawnerId?: number);
+    damage(server: ZoneServer2016, damageInfo: DamageInfo): void;
+    OnFullCharacterDataRequest(server: ZoneServer2016, client: ZoneClient2016): void;
+    OnProjectileHit(server: ZoneServer2016, damageInfo: DamageInfo): void;
+}

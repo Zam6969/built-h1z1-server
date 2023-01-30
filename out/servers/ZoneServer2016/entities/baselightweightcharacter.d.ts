@@ -1,0 +1,136 @@
+import { ZoneServer2016 } from "../zoneserver";
+import { BaseEntity } from "./baseentity";
+export declare class BaseLightweightCharacter extends BaseEntity {
+    state: {
+        position: Float32Array;
+        rotation: Float32Array;
+        lookAt: Float32Array;
+    };
+    flags: {
+        bit0: number;
+        bit1: number;
+        bit2: number;
+        bit3: number;
+        bit4: number;
+        bit5: number;
+        bit6: number;
+        bit7: number;
+        bit8: number;
+        bit9: number;
+        bit10: number;
+        bit11: number;
+        projectileCollision: number;
+        bit13: number;
+        bit14: number;
+        bit15: number;
+        bit16: number;
+        bit17: number;
+        bit18: number;
+        bit19: number;
+        noCollide: number;
+        knockedOut: number;
+        bit22: number;
+        bit23: number;
+    };
+    isLightweight: boolean;
+    positionUpdateType: number;
+    headActor: string;
+    profileId: number;
+    nameId: number;
+    constructor(characterId: string, transientId: number, actorModelId: number, position: Float32Array, rotation: Float32Array, server: ZoneServer2016);
+    /**
+     * Gets the lightweight npc/pc packet fields for use in sendself, addlightweightnpc, or addlightweightpc
+     */
+    pGetLightweight(): {
+        characterId: string;
+        transientId: number;
+        actorModelId: number;
+        position: number[];
+        rotation: Float32Array;
+        scale: Float32Array;
+        positionUpdateType: number;
+        profileId: number;
+        isLightweight: boolean;
+        flags: {
+            flags1: {
+                bit0: number;
+                bit1: number;
+                bit2: number;
+                bit3: number;
+                bit4: number;
+                bit5: number;
+                bit6: number;
+                bit7: number;
+                bit8: number;
+                bit9: number;
+                bit10: number;
+                bit11: number;
+                projectileCollision: number;
+                bit13: number;
+                bit14: number;
+                bit15: number;
+                bit16: number;
+                bit17: number;
+                bit18: number;
+                bit19: number;
+                noCollide: number;
+                knockedOut: number;
+                bit22: number;
+                bit23: number;
+            };
+            flags2: {
+                bit0: number;
+                bit1: number;
+                bit2: number;
+                bit3: number;
+                bit4: number;
+                bit5: number;
+                bit6: number;
+                bit7: number;
+                bit8: number;
+                bit9: number;
+                bit10: number;
+                bit11: number;
+                projectileCollision: number;
+                bit13: number;
+                bit14: number;
+                bit15: number;
+                bit16: number;
+                bit17: number;
+                bit18: number;
+                bit19: number;
+                noCollide: number;
+                knockedOut: number;
+                bit22: number;
+                bit23: number;
+            };
+            flags3: {
+                bit0: number;
+                bit1: number;
+                bit2: number;
+                bit3: number;
+                bit4: number;
+                bit5: number;
+                bit6: number;
+                bit7: number;
+                bit8: number;
+                bit9: number;
+                bit10: number;
+                bit11: number;
+                projectileCollision: number;
+                bit13: number;
+                bit14: number;
+                bit15: number;
+                bit16: number;
+                bit17: number;
+                bit18: number;
+                bit19: number;
+                noCollide: number;
+                knockedOut: number;
+                bit22: number;
+                bit23: number;
+            };
+        };
+        headActor: string;
+    };
+}
